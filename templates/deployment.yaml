@@ -1,0 +1,24 @@
+apiVersion: {{ template "common.capabilities.deployment.apiVersion" . }}
+kind: Deployment
+metadata:
+  name: demo-go-k8s
+  labels:
+    app: go
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: go
+  template:
+    metadata:
+      labels:
+        app: go
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.internalPort }}
+        resources:
+{{ toYaml .Values.resources | indent 12 }}
