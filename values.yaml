@@ -5,7 +5,7 @@ replicaCount: 1
 
 image:
   repository: kaushikrahul08/go-app
-  tag: green
+  tag: greenyellow
   pullPolicy: IfNotPresent
 
 service:
