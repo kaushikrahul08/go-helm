@@ -16,10 +16,10 @@ service:
 
 resources:
   limits:
-    cpu: 100m
-    memory: 100Mi
-  requests:
-    cpu: 80m
+    cpu: 50m
     memory: 50Mi
+  requests:
+    cpu: 30m
+    memory: 30Mi
 
 
