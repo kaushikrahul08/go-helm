@@ -18,3 +18,10 @@ spec:
             port:
               number: 8000
         pathType: Exact
+      - path: /
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+        pathType: Exact
